@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.3.1.js"></script>
+    <script src="Game.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <p class='game-name'>Red or Blue (Крестики-Нолики)</p>
+        <div class="game-field" id="gameField">
+            <div class="field" id='A1' onclick="checkField(this)"></div>
+            <div class="field" id='A2' onclick="checkField(this)"></div>
+            <div class="field" id='A3' onclick="checkField(this)"></div>
+            <div class="field" id='B1' onclick="checkField(this)"></div>
+            <div class="field" id='B2' onclick="checkField(this)"></div>
+            <div class="field" id='B3' onclick="checkField(this)"></div>
+            <div class="field" id='C1' onclick="checkField(this)"></div>
+            <div class="field" id='C2' onclick="checkField(this)"></div>
+            <div class="field" id='C3' onclick="checkField(this)"></div>
+        </div>
+<!--        <div><a href="game.html" class="redButton">START NEW GAME</a></div>-->
+    </div>
+    <script>
+        //Скрипт делает игровое поле квадратным. Для получения ширины и высоты окна браузера используется jquery
+        {
+            let gameField = document.getElementById('gameField');
+            let width = $(window).width();
+            let height = $(window).height();
+
+            if (height <= width) {
+                gameField.style.height = gameField.style.width = height * 0.6 + 'px';
+            } else {
+                gameField.style.height = gameField.style.width = width * 0.6 + 'px';
+            }
+        }
+
+    </script>
+</body>
+
+</html>
